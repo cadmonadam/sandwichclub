@@ -10,11 +10,18 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Itt állítom be, hogy activity_main.xml kapcsolódjon ehhez az osztályhoz.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
+        * Egy új sandwiches elnevezésűt String tömböt hozok létre, melyhez hozzárendelem a sandwiches_names
+        * array-t a strings xml-ből.
+        * Egy új ArrayAdaptert hozok létre, majd feltöltöm a sandwiches adatait a ListView-ba, és hozzákapcsolom
+        * az adaptert.
+        * */
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, sandwiches);
@@ -22,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         // Simplification: Using a ListView instead of a RecyclerView
         ListView listView = findViewById(R.id.sandwiches_listview);
         listView.setAdapter(adapter);
+
+        /*Beállítok egy onclicklistenert, mely az egyes elemekre kattintva elindítja
+        * a detail activityt.
+        * Rákattintáskor az onItemClick beveszi a "position"-t, amit aztán a launchDetailActivity
+        * paraméterként bevesz, majd. az intent.putExtra-val átadja a DetailActivity-nek.
+        * */
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {

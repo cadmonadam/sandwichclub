@@ -1,5 +1,7 @@
 package com.udacity.sandwichclub.utils;
 
+import android.util.Log;
+
 import com.udacity.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
@@ -14,8 +16,8 @@ public class JsonUtils {
     public static Sandwich parseSandwichJson(String json) {
         Sandwich sandwich = new Sandwich();
         try {
-            JSONObject sandwichJsonObject = new JSONObject(json);
-            JSONObject nameJSONObject = sandwichJsonObject.getJSONObject("name");
+            JSONObject startingJsonObject = new JSONObject(json);
+            JSONObject nameJSONObject = startingJsonObject.getJSONObject("name");
 
             JSONArray alsoKnownAsJSONArray = nameJSONObject.getJSONArray("alsoKnownAs");
             List<String> alsoKnownAsList = new ArrayList<>();
@@ -23,7 +25,7 @@ public class JsonUtils {
                 alsoKnownAsList.add(alsoKnownAsJSONArray.getString(i));
             }
 
-            JSONArray ingredientJSONArray = sandwichJsonObject.getJSONArray("ingredients");
+            JSONArray ingredientJSONArray = startingJsonObject.getJSONArray("ingredients");
             List<String> ingredientsList = new ArrayList<>();
             for (int i = 0; i < ingredientJSONArray.length(); i++) {
                 ingredientsList.add(ingredientJSONArray.getString(i));
@@ -31,13 +33,13 @@ public class JsonUtils {
 
             sandwich.setMainName(nameJSONObject.getString("mainName"));
             sandwich.setAlsoKnownAs(alsoKnownAsList);
-            sandwich.setPlaceOfOrigin(sandwichJsonObject.getString("placeOfOrigin"));
-            sandwich.setDescription(sandwichJsonObject.getString("description"));
-            sandwich.setImage(sandwichJsonObject.getString("image"));
+            sandwich.setPlaceOfOrigin(startingJsonObject.getString("placeOfOrigin"));
+            sandwich.setDescription(startingJsonObject.getString("description"));
+            sandwich.setImage(startingJsonObject.getString("image"));
             sandwich.setIngredients(ingredientsList);
 
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e("JsonUtils", "A problem occurred when parsing the JSON file.", e);
         }
 
         return sandwich;

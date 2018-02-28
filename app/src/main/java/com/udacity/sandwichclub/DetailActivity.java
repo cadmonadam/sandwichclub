@@ -48,9 +48,7 @@ public class DetailActivity extends AppCompatActivity {
             closeOnError();
             return;
         }
-        /*A JsonUtils által visszaadott Sandwich objektumot ide illesztjük be, miután meghívjük
-        * a parseSandwichJson metódust.
-        * Előtte itt összekötjük a String json objektumot a sting.xml-ben található sandwich_details-el*/
+
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
@@ -95,7 +93,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private String checkIfTextEmpty(String examinedString) {
         if (examinedString.equals("")) {
-            return "Unknown";
+            return "unknown";
         }
 
         return examinedString;

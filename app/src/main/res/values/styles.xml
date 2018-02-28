@@ -8,4 +8,45 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="mainScrollView_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="mainLinearLayout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="imageView_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">230dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:contentDescription">@string/sandwich_picture_content_description</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="firstTitleTextView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/paddingLeft_title_textview</item>
+        <item name="android:paddingTop">@dimen/paddingTop_title_textview</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="descriptiveTextView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding_descriptive_textview</item>
+    </style>
+
+    <style name="titleTextView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/paddingLeft_title_textview</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

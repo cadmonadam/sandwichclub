@@ -1,81 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    style="@style/mainScrollView_style"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <ImageView
-        android:id="@+id/image_iv"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/placeholder_shawarmafood" />
+    <LinearLayout style="@style/mainLinearLayout_style">
+
+        <ImageView
+            android:id="@+id/image_iv"
+            style="@style/imageView_style"
+            tools:src="@drawable/placeholder_shawarmafood" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:paddingTop="8dp"
-            android:text="@string/detail_place_of_origin_label"
-            android:textStyle="bold" />
+            style="@style/firstTitleTextView_style"
+            android:text="@string/detail_place_of_origin_label" />
 
         <TextView
-        android:id="@+id/origin_tv"
-        android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            tools:text="This is to demonstrate how the real text will fill the screen and make line-breaks properly." />
+            android:id="@+id/origin_tv"
+            style="@style/descriptiveTextView_style"
+            tools:text="@string/text_demonstration" />
 
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+            style="@style/titleTextView_style"
+            android:text="@string/detail_also_known_as_label" />
 
         <TextView
             android:id="@+id/also_known_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            tools:text="This is to demonstrate how the real text will fill the screen and make line-breaks properly." />
+            style="@style/descriptiveTextView_style"
+            tools:text="@string/text_demonstration" />
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+            style="@style/titleTextView_style"
+            android:text="@string/detail_ingredients_label" />
 
         <TextView
             android:id="@+id/ingredients_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            tools:text="This is to demonstrate how the real text will fill the screen and make line-breaks properly." />
+            style="@style/descriptiveTextView_style"
+            tools:text="@string/text_demonstration" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:text="@string/detail_description_label"
-            android:textStyle="bold" />
+            style="@style/titleTextView_style"
+            android:text="@string/detail_description_label" />
 
         <TextView
             android:id="@+id/description_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            tools:text="This is to demonstrate how the real text will fill the screen and make line-breaks properly." />
+            style="@style/descriptiveTextView_style"
+            tools:text="@string/text_demonstration" />
 
     </LinearLayout>
 

@@ -13,6 +13,9 @@
     <!-- Error messages-->
     <string name="detail_error_message">Sandwich data not available</string>
 
+    <!-- Placeholder strings -->
+    <string name="text_demonstration">Placeholder text in order to demonstrate how the real text will fill the screen and make line-breaks properly.</string>
+
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
         <item>Bosna</item>
